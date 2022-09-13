@@ -12,9 +12,9 @@ jobs:
       - name: Get PR closed number
         env:
           PR_NUMBER: ${{ toJson(github.event.number) }}
-          PR_REF_NAME: ${{ toJson(github.event.ref_name) }}
-          PR_REF: ${{ toJson(github.event.ref) }}
-          PR_SHA: ${{ toJson(github.event.sha) }}
+          PR_REF_NAME: ${{ github.event.ref_name }}
+          PR_REF: ${{ github.event.ref }}
+          PR_SHA: ${{ github.event.sha }}
         run: |
           echo "$PR_NUMBER"
           echo "$PR_REF_NAME"
