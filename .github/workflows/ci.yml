@@ -1,0 +1,19 @@
+name: Test closed branch
+
+on:
+  pull_request:
+    types: [closed]
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - name: Get PR closed number
+        env:
+          PR_NUMBER: ${{ toJson(github.event.number) }}
+          PR_REF: ${{ toJson(github.event.ref_name) }}
+        run: |
+          echo "$PR_NUMBER"
+          echo "PR_REF"
+
