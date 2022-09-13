@@ -13,7 +13,7 @@ jobs:
         env:
           PR_NUMBER: ${{ toJson(github.event.number) }}
           PR_REF_NAME: ${{ toJson(github.event.ref_name) }}
-          PR_REF_NAME: ${{ toJson(github.event.ref) }}
+          PR_REF: ${{ toJson(github.event.ref) }}
           PR_SHA: ${{ toJson(github.event.sha) }}
         run: |
           echo "$PR_NUMBER"
