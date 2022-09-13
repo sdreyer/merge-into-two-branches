@@ -15,5 +15,5 @@ jobs:
           PR_REF: ${{ toJson(github.event.ref_name) }}
         run: |
           echo "$PR_NUMBER"
-          echo "PR_REF"
+          echo "$PR_REF"
 
